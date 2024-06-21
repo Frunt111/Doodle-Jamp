@@ -1,0 +1,1 @@
+display_size = (420, 720)

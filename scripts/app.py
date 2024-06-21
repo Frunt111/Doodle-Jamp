@@ -3,6 +3,7 @@ import os
 import pygame
 from scripts.game import Game
 from scripts.functions import *
+from scripts.constants import display_size
 
 
 class App():
@@ -18,16 +19,14 @@ class App():
         pygame.display.set_caption('Doodle Jamp')
         pygame.display.set_icon(load_image('assets', 'icons', 'icon.ico'))
 
-        fon = Game()
-
 
     def handle_events(self):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 self.game = False
-            if event.type == pygme.KEYDOWN:
+            if event.type == pygame.KEYDOWN:
                 self.game.prcess_key_down_event(event.key)
-            if event.type == pygme.KEYUP:
+            if event.type == pygame.KEYUP:
                 self.game.prcess_key_up_event(event.key)
 
 
