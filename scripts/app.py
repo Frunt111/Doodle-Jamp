@@ -25,9 +25,9 @@ class App():
             if event.type == pygame.QUIT:
                 self.game = False
             if event.type == pygame.KEYDOWN:
-                self.game.prcess_key_down_event(event.key)
+                self.game.handle_key_down_event(event.key)
             if event.type == pygame.KEYUP:
-                self.game.prcess_key_up_event(event.key)
+                self.game.handle_key_up_event(event.key)
 
 
     def render(self):
@@ -47,3 +47,4 @@ class App():
             self.handle_events()
             self.update()
             self.render()
+            self.clock.tick(self.maxFPS)
